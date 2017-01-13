@@ -1,7 +1,7 @@
 # Speech
 Speech based assistant.
-Dependencies:
-gTTS(Google text to speech)
-mpg123 or mp321(Music player)
-SpeechRecognition(Python module)
+Dependencies:<br/>
+gTTS(Google text to speech)<br/>
+mpg123 or mpg321(Music player)<br/>
+SpeechRecognition(Python module)<br/>
 pyowm(Openweather plugin)
