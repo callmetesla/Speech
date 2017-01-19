@@ -28,6 +28,9 @@ def speak(s):
 def callback():
     with mic as source:
         r.adjust_for_ambient_noise(source)
+        os.system('clear')
+        print("\t\t\t\t\t\tSpeak Now")
+        os.system('mpg321 -q Notification.mp3')
         audio=r.listen(source)
     try:
         return(str.lower(str(r.recognize_google(audio))))
@@ -35,8 +38,9 @@ def callback():
         print("Error")
 
 if __name__=="__main__":
+    os.system('cls')
     while(callback()=='jarvis'):
-        print("Welcome  \n What can i do for you?\nThese are the things i can do for you\n 1.Repeat \n 2.Time\n 3.Date\n 4.Weather\n 5.News ")
+        print("\n \t\t\t\t\t\t\tWelcome  \n \t\t\t\t\t\t\tWhat can i do for you?\n \t\t\t\t\t\t\tThese are the things i can do for you\n \t\t\t\t\t\t1.Repeat \n \t\t\t\t\t\t2.Time\n \t\t\t\t\t\t3.Date\n \t\t\t\t\t\t4.Weather\n \t\t\t\t\t\t5.News\n ")
         speak('welcome  what can i do for you')
         speak(' Repeat')
         speak(' Time')
@@ -44,6 +48,7 @@ if __name__=="__main__":
         speak('Weather')
         speak(' News')
         case=callback()
+        print "\t\t\t\t\t\tThis is what you said : " + case
         if(case=='time'):
             speak(time.strftime("%H:%M:%S\n"))
         elif(case=='date'):
